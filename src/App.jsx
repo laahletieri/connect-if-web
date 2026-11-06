@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AttendanceReport from "./pages/AttendanceReport";
 import Dashboard from "./pages/Dashboard";
 import EmailConfirmed from "./pages/EmailConfirmed";
+import EventForm from "./pages/EventForm";
 import ForgotPassword from "./pages/ForgotPassword";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -20,6 +22,30 @@ export default function App() {
         element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/eventos/novo"
+        element={
+          <ProtectedRoute>
+            <EventForm />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/eventos/:id"
+        element={
+          <ProtectedRoute>
+            <EventForm />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/eventos/:id/presenca"
+        element={
+          <ProtectedRoute>
+            <AttendanceReport />
           </ProtectedRoute>
         }
       />
